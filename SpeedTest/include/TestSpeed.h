@@ -80,7 +80,7 @@ namespace test {
                         [this](TestResultType& result) { this->RunTestThread(result); });
                 }
             }
-            catch (std::exception e) {
+            catch (std::exception& e) {
                 WriteLnConsole("");
                 WriteLnConsole("Error:");
                 WriteLnConsole(e.what());
@@ -105,7 +105,7 @@ namespace test {
                 test_analitics_.tests_count = tests_count;
                 test_analitics_.average = analyze;
             }
-            catch (std::exception e) {
+            catch (std::exception& e) {
                 WriteLnConsole("");
                 WriteLnConsole("Error:");
                 WriteLnConsole(e.what());

@@ -117,7 +117,7 @@ namespace test {
                     total_time_elapsed_ = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
                 } else { std::cout << "There is no tests to test.\n"; }
             }
-            catch (std::exception e) {
+            catch (std::exception& e) {
                 WriteLnConsole("");
                 WriteLnConsole("Error:");
                 WriteLnConsole(e.what());
@@ -149,7 +149,7 @@ namespace test {
                 }
                 SaveResultsToLog();
             }
-            catch (std::exception e) {
+            catch (std::exception& e) {
                 WriteLnConsole("");
                 WriteLnConsole("Error:");
                 WriteLnConsole(e.what());
