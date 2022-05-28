@@ -1,0 +1,38 @@
+#ifndef _H
+#define _H
+
+namespace test {
+}
+
+#endif // !
+
+#pragma omp parallel for schedule(static)
+
+
+"C:\Development\Projects\Templates\!MY\File Write, Read\FileStreamWrapper\Debug\ErrorsHandlerFileOperations.obj"
+"C:\Development\Projects\Templates\!MY\File Write, Read\FileStreamWrapper\Debug\FileOperations.obj"
+"C:\Development\Projects\Templates\!MY\File Write, Read\FileStreamWrapper\Debug\FileStreamWrapperProject.obj"
+"C:\Development\Projects\Templates\!MY\File Write, Read\FileStreamWrapper\Debug\ISerializable.obj"
+"C:\Development\Projects\Templates\!MY\File Write, Read\FileStreamWrapper\Debug\Serialization.obj"
+
+
+
+#ifndef GAMEWINDOWABSTRACT_HPP
+#define GAMEWINDOWABSTRACT_HPP
+
+/// <summary>
+/// Абстрактный класс игрового окна
+/// </summary>
+class GameWindowAbstract
+{
+
+};
+
+#endif
+
+
+Related header
+C system headers
+C++ standard library headers
+Other libraries' headers
+Project's headers.
