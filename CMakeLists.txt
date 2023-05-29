@@ -47,6 +47,8 @@ set(MY_TESTS_FILTER
 
 find_package(OpenMP REQUIRED)
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+
 # Add source to this project's executable.
 add_executable(speed-test ${SOURCES} ${HEADER_FILES_FILTER} ${DOC_FILTER} ${MY_TESTS_FILTER})
 # Include Directories

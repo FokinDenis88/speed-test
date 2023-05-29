@@ -1,0 +1,6 @@
+[submodule "external/math-functions"]
+	path = external/math-functions
+	url = git@gitlab.com:FokinDenis88/math-functions.git
+[submodule "external/file-stream-wrapper"]
+	path = external/file-stream-wrapper
+	url = git@gitlab.com:FokinDenis88/file-stream-wrapper.git
