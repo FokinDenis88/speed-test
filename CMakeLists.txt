@@ -5,6 +5,25 @@ cmake_minimum_required(VERSION 3.8)
 
 # Can be different with target
 project("speed-test" VERSION 1.0)
+set(TARGET_NAME speed-test)
+
+
+#============================Google Test========================================
+# http://google.github.io/googletest/quickstart-cmake.html
+# GoogleTest requires at least C++14
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+#=================================================================================
+
 
 set(SOURCES
     src/main.cpp
@@ -24,10 +43,11 @@ set(HEADER_FILES_FILTER
     include/test-results-analitics.hpp
     include/test-speed.hpp
     include/write-line-console.hpp
+    include/repeat-macros.hpp
     )
 set(DOC_FILTER
-    doc/to-do.txt
-    doc/copy-past-helper.txt
+    doc/general/to-do.txt
+    doc/general/copy-past-helper.txt
     )
 set(MY_TESTS_FILTER
     my_tests/AccumulateVsSum.h
@@ -50,10 +70,10 @@ find_package(OpenMP REQUIRED)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
 # Add source to this project's executable.
-add_executable(speed-test ${SOURCES} ${HEADER_FILES_FILTER} ${DOC_FILTER} ${MY_TESTS_FILTER})
+add_executable(${TARGET_NAME} ${SOURCES} ${HEADER_FILES_FILTER} ${DOC_FILTER} ${MY_TESTS_FILTER})
 # Include Directories
-target_include_directories(speed-test PUBLIC ${INCLUDES})
-target_link_libraries(speed-test PRIVATE OpenMP::OpenMP_CXX)
+target_include_directories(${TARGET_NAME} PUBLIC ${INCLUDES})
+target_link_libraries(${TARGET_NAME} PRIVATE OpenMP::OpenMP_CXX)
 
 # Filters for Grouping files in project
 source_group("Header Files" FILES ${HEADER_FILES_FILTER})
@@ -62,10 +82,10 @@ source_group("My_Tests" FILES ${MY_TESTS_FILTER})
 
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET speed-test PROPERTY CXX_STANDARD 20)
-  set_property(TARGET speed-test PROPERTY C_STANDARD 17)
+  set_property(TARGET ${TARGET_NAME} PROPERTY CXX_STANDARD 20)
+  set_property(TARGET ${TARGET_NAME} PROPERTY C_STANDARD 17)
 endif()
-set_property(TARGET speed-test PROPERTY SUBSYSTEM CONSOLE)
+set_property(TARGET ${TARGET_NAME} PROPERTY SUBSYSTEM CONSOLE)
 
 
 

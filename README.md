@@ -2,7 +2,7 @@
 Helper project for testing speed of any function
 
 ## Installation
-cmake -B build/visual-studio-cmake
+cmake -B build/visual-studio
 
 ## Support
 Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
